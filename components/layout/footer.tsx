@@ -15,10 +15,10 @@ export default async function Footer() {
   const copyrightName = COMPANY_NAME || SITE_NAME || '';
 
   return (
-    <footer className="w-full border-t border-[#E6DDD2] bg-[#F6EFE6] text-sm text-[#4C433B]">
+    <footer className="w-full border-t border-[#E6DDD2] bg-[#F6EFE6] text-sm text-[#8A6A3D]">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0">
         <div>
-          <Link className="flex items-center gap-2 text-[#1E1A16] md:pt-1" href="/">
+          <Link className="flex items-center gap-2 text-[#8A6A3D] md:pt-1" href="/">
             <LogoSquare size="sm" />
             <span className="uppercase">{SITE_NAME}</span>
           </Link>
@@ -39,7 +39,7 @@ export default async function Footer() {
         </Suspense>
         <div className="md:ml-auto">
           <a
-            className="flex h-8 w-max flex-none items-center justify-center rounded-md border border-[#D8CBBE] bg-[#FBF7F2] text-xs text-[#1E1A16] hover:bg-[#F4EDE4]"
+            className="flex h-8 w-max flex-none items-center justify-center rounded-md border border-[#D8CBBE] bg-[#FBF7F2] text-xs text-[#8A6A3D] hover:bg-[#F4EDE4]"
             aria-label="Deploy on Vercel"
             href="https://vercel.com/templates/next.js/nextjs-commerce"
           >
