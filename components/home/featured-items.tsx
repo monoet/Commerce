@@ -68,7 +68,9 @@ export default function FeaturedItems() {
             Piezas nuevas con brillo suave
           </h2>
         </div>
-        <span className="text-sm text-[rgb(var(--fg))]">Edicion limitada</span>
+        <span className="rounded-full border border-[rgb(var(--border))] bg-[rgb(var(--bg))] px-3 py-1 text-xs uppercase tracking-[0.2em] text-[rgb(var(--muted))]">
+          Edicion limitada
+        </span>
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {ITEMS.map((item) => {
@@ -96,7 +98,7 @@ export default function FeaturedItems() {
                 className="object-cover opacity-0 transition duration-500 group-hover:opacity-100"
               />
               {item.tag ? (
-                <span className="absolute left-4 top-4 rounded-full bg-[rgb(var(--card))]/90 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-[rgb(var(--fg))]">
+                <span className="absolute left-4 top-4 rounded-full border border-[rgb(var(--border))] bg-[rgb(var(--bg))] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-[rgb(var(--muted))]">
                   {item.tag}
                 </span>
               ) : null}

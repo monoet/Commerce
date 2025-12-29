@@ -18,8 +18,8 @@ export default async function OpengraphImage(
   return new ImageResponse(
     (
       <div tw="flex h-full w-full flex-col items-center justify-center bg-[#FBF7F2]">
-        <div tw="flex flex-none items-center justify-center border border-[#C6A96A] h-[160px] w-[160px] rounded-3xl">
-          <LogoIcon width="64" height="58" fill="#C6A96A" />
+        <div tw="flex flex-none items-center justify-center border border-[#9C6B2F] h-[160px] w-[160px] rounded-3xl">
+          <LogoIcon width="64" height="58" fill="#9C6B2F" />
         </div>
         <p tw="mt-12 text-6xl font-bold text-[#1E1A16]">{title}</p>
       </div>

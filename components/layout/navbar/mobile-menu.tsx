@@ -35,7 +35,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
       <button
         onClick={openMobileMenu}
         aria-label="Open mobile menu"
-        className="flex h-11 w-11 items-center justify-center rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--card))] text-[rgb(var(--fg))] transition-colors hover:bg-[rgb(var(--bg))] md:hidden"
+        className="flex h-11 w-11 items-center justify-center rounded-md border border-white/20 bg-white/10 text-[rgb(var(--header-text))] transition-colors hover:bg-white/20 md:hidden"
       >
         <Bars3Icon className="h-4" />
       </button>
@@ -50,7 +50,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
             leaveFrom="opacity-100 backdrop-blur-[.5px]"
             leaveTo="opacity-0 backdrop-blur-none"
           >
-            <div className="fixed inset-0 bg-[rgb(var(--fg))]/10" aria-hidden="true" />
+            <div className="fixed inset-0 bg-black/20" aria-hidden="true" />
           </Transition.Child>
           <Transition.Child
             as={Fragment}
@@ -61,10 +61,10 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-[-100%]"
           >
-            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-[rgb(var(--bg))] pb-6 text-[rgb(var(--fg))]">
+            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-[rgb(var(--header-green))] pb-6 text-[rgb(var(--header-text))]">
               <div className="p-4">
                 <button
-                  className="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--card))] text-[rgb(var(--fg))] transition-colors hover:bg-[rgb(var(--bg))]"
+                  className="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-white/20 bg-white/10 text-[rgb(var(--header-text))] transition-colors hover:bg-white/20"
                   onClick={closeMobileMenu}
                   aria-label="Close mobile menu"
                 >
@@ -80,7 +80,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                   <ul className="flex w-full flex-col">
                     {menu.map((item: Menu) => (
                       <li
-                        className="py-2 text-xl text-[rgb(var(--fg))] transition-colors hover:text-[rgb(var(--muted))]"
+                        className="py-2 text-xl text-[rgb(var(--header-text))] transition-colors hover:text-white"
                         key={item.title}
                       >
                         <Link href={item.path} prefetch={true} onClick={closeMobileMenu}>

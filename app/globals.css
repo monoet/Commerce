@@ -39,6 +39,9 @@ button {
   --muted: 111 101 92;
   --card: 255 255 255;
   --border: 230 221 210;
+  --header-green: 44 51 47;
+  --header-text: 240 235 228;
+  --accent-gold: 156 107 47;
 }
 
 html,
@@ -67,7 +70,7 @@ body {
 }
 
 .logo-mark {
-  color: #c6a96a;
+  color: #9c6b2f;
 }
 
 .logo-mark:hover {
