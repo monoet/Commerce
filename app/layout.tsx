@@ -34,12 +34,14 @@ export default async function RootLayout({
     <html lang="en" className={`${GeistSans.variable} bg-[#FBF7F2]`}>
       <body className="min-h-screen bg-[#FBF7F2] text-[#8A6A3D] selection:bg-[#E9D2C5]">
         <CartProvider cartPromise={cart}>
-          <Navbar />
-          <main>
-            {children}
-            <Toaster closeButton />
-            <WelcomeToast />
-          </main>
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            <main className="flex-1">
+              {children}
+              <Toaster closeButton />
+              <WelcomeToast />
+            </main>
+          </div>
         </CartProvider>
       </body>
     </html>
