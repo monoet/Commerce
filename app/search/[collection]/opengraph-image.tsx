@@ -1,6 +1,9 @@
 import OpengraphImage from 'components/opengraph-image';
 import { getCollection } from 'lib/shopify';
 
+export const runtime = 'edge';
+export const dynamic = 'force-dynamic';
+
 export default async function Image({
   params
 }: {
