@@ -131,7 +131,6 @@ export default function LightPillar({
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     if (renderer.outputColorSpace !== undefined) {
-      // @ts-expect-error - keep compatibility across Three versions.
       renderer.outputColorSpace = THREE.SRGBColorSpace;
     }
 
