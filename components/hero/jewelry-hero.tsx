@@ -84,25 +84,25 @@ export default function JewelryHero() {
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#8A6A3D]">
             Atelier de perlas
           </p>
-          <h1 className="mt-5 text-5xl font-semibold leading-[1.02] text-[#1E1A16] sm:text-6xl">
+          <h1 className="mt-5 text-5xl font-semibold leading-[1.02] text-white drop-shadow-[0_2px_20px_rgba(30,26,22,0.28)] sm:text-6xl">
             Joyeria minimal con
             <br />
             brillo nacarado.
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-[#4C433B]">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-[#8A6A3D]">
             Piezas esenciales, luz suave y un acabado calido que se siente
             editorial. Disenado para acompanarte todos los dias.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/search"
-              className="rounded-full bg-[#1E1A16] px-6 py-3 text-sm font-medium text-[#FBF7F2] transition hover:bg-[#27221D]"
+              className="rounded-full border border-[#D8CBBE] bg-[#E9DDCE] px-6 py-3 text-sm font-medium text-[#6F655C] transition hover:bg-[#F4EDE4]"
             >
               Ver coleccion
             </Link>
             <Link
               href="/search"
-              className="rounded-full border border-[#D8CBBE] bg-white/35 px-6 py-3 text-sm font-medium text-[#1E1A16] transition hover:bg-white/55"
+              className="rounded-full border border-[#D8CBBE] bg-white/35 px-6 py-3 text-sm font-medium text-[#8A6A3D] transition hover:bg-white/55"
             >
               Comprar ahora
             </Link>
@@ -110,15 +110,15 @@ export default function JewelryHero() {
         </div>
         <div className="grid max-w-3xl gap-6 text-sm text-[#6F655C] sm:grid-cols-3">
           <div>
-            <p className="text-[#1E1A16]">Bano premium</p>
+            <p className="text-[#8A6A3D]">Bano premium</p>
             <p className="mt-1">Acabado perlado y resistencia diaria.</p>
           </div>
           <div>
-            <p className="text-[#1E1A16]">Envio cuidado</p>
+            <p className="text-[#8A6A3D]">Envio cuidado</p>
             <p className="mt-1">Empaque delicado y protegido.</p>
           </div>
           <div>
-            <p className="text-[#1E1A16]">Edicion limitada</p>
+            <p className="text-[#8A6A3D]">Edicion limitada</p>
             <p className="mt-1">Series pequenas y seleccionadas.</p>
           </div>
         </div>
