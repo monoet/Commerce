@@ -99,7 +99,7 @@ export default function FeaturedItems() {
                 className="object-cover opacity-0 transition duration-500 group-hover:opacity-100"
               />
               {item.tag ? (
-                <span className="absolute left-4 top-4 rounded-full border border-[rgb(var(--accent))] bg-transparent px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-[rgb(var(--accent))]">
+                <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-[rgb(var(--accent))/0.55] bg-white/75 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-[rgb(var(--accent))] shadow-sm backdrop-blur-md">
                   {item.tag}
                 </span>
               ) : null}
