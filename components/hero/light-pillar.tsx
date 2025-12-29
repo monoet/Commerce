@@ -314,7 +314,8 @@ export default function LightPillar({
       if (!rendererRef.current || !materialRef.current) return;
       const { w: nextWidth, h: nextHeight } = getSize();
       rendererRef.current.setSize(nextWidth, nextHeight);
-      materialRef.current.uniforms.uResolution.value.set(nextWidth, nextHeight);
+      const uResolution = materialRef.current?.uniforms?.uResolution;
+      if (uResolution) uResolution.value.set(nextWidth, nextHeight);
     });
     ro.observe(container);
 
