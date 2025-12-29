@@ -1,4 +1,4 @@
-export default {
+const config = {
   experimental: {
     ppr: true,
     inlineCss: true,
@@ -20,3 +20,5 @@ export default {
     ]
   }
 };
+
+export default config;
