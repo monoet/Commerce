@@ -1,7 +1,7 @@
 import CartModal from 'components/cart/modal';
-import LogoIcon from 'components/icons/logo';
 import { getMenu } from 'lib/shopify';
 import { Menu } from 'lib/shopify/types';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import MobileMenu from './mobile-menu';
@@ -28,9 +28,14 @@ export async function Navbar() {
             prefetch={true}
             className="mr-2 flex w-full items-center justify-center gap-3 md:w-auto lg:mr-6"
           >
-            <div className="logo-mark text-[rgb(var(--accent))]">
-              <LogoIcon className="h-[64px] w-[64px]" />
-            </div>
+            <Image
+              src="/brand/logo-mark.png"
+              alt={SITE_NAME || 'Joyerosnayis'}
+              width={96}
+              height={96}
+              className="h-[48px] w-auto"
+              priority
+            />
             <div className="relative top-[1px] flex-none font-medium uppercase tracking-[0.22em] text-[#8B5E26] md:hidden lg:block md:text-base">
               {SITE_NAME}
             </div>

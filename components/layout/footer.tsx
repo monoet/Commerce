@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 import FooterMenu from 'components/layout/footer-menu';
-import LogoSquare from 'components/logo-square';
 import { getMenu } from 'lib/shopify';
+import Image from 'next/image';
 import { Suspense } from 'react';
 
 const { COMPANY_NAME, SITE_NAME } = process.env;
@@ -18,8 +18,14 @@ export default async function Footer() {
     <footer className="w-full border-t border-[rgb(var(--border))] bg-[rgb(var(--bg))] text-sm text-[rgb(var(--fg))]">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0">
         <div>
-          <Link className="flex items-center gap-2 md:pt-1" href="/">
-            <LogoSquare size="sm" />
+          <Link className="flex items-center gap-3 md:pt-1" href="/">
+            <Image
+              src="/brand/logo-mark.png"
+              alt={SITE_NAME || 'Joyerosnayis'}
+              width={112}
+              height={112}
+              className="h-[56px] w-auto"
+            />
             <span className="relative top-[1px] font-medium uppercase tracking-[0.22em] text-[#8B5E26]">
               {SITE_NAME}
             </span>
