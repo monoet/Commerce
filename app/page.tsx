@@ -16,6 +16,7 @@ export default function HomePage() {
   return (
     <>
       <JewelryHero />
+      <div className="border-t border-[rgb(var(--border))]" />
       <FeaturedItems />
       <ThreeItemGrid />
       <Carousel />

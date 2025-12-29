@@ -62,6 +62,7 @@ export default function JewelryHero() {
   return (
     <section className="relative overflow-hidden bg-[linear-gradient(90deg,rgb(var(--hero-sand)),rgb(var(--hero-ivory)))]">
       <div className="hero-beam absolute inset-0 pointer-events-none" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(180deg,rgba(0,0,0,0),rgb(var(--bg)))]" />
       <LightPillar
         className={preset.className}
         topColor={preset.topColor}

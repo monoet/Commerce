@@ -18,9 +18,11 @@ export default async function Footer() {
     <footer className="w-full border-t border-[rgb(var(--border))] bg-[rgb(var(--bg))] text-sm text-[rgb(var(--fg))]">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0">
         <div>
-          <Link className="brand-name logo-mark flex items-center gap-2 md:pt-1" href="/">
+          <Link className="flex items-center gap-2 md:pt-1" href="/">
             <LogoSquare size="sm" />
-            <span className="uppercase">{SITE_NAME}</span>
+            <span className="relative top-[1px] font-medium uppercase tracking-[0.22em] text-[#8B5E26]">
+              {SITE_NAME}
+            </span>
           </Link>
         </div>
         <Suspense

@@ -13,8 +13,9 @@ export async function Navbar() {
   const menu = await getMenu('next-js-frontend-header-menu');
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-[rgb(var(--border))] bg-[rgb(var(--bg))] text-[rgb(var(--fg))]">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
+    <nav className="sticky top-0 z-50 border-b border-[rgb(var(--border))/0.9] bg-[rgb(var(--bg))/0.72] text-[rgb(var(--fg))] backdrop-blur-xl">
+      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,rgba(255,255,255,0.55),rgba(255,255,255,0.10))]" />
+      <div className="relative mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
         <div className="block flex-none md:hidden">
           <Suspense fallback={null}>
             <MobileMenu menu={menu} />
@@ -28,9 +29,9 @@ export async function Navbar() {
             className="mr-2 flex w-full items-center justify-center gap-3 md:w-auto lg:mr-6"
           >
             <div className="logo-mark text-[rgb(var(--accent))]">
-              <LogoIcon className="h-[72px] w-[72px]" />
+              <LogoIcon className="h-[64px] w-[64px]" />
             </div>
-            <div className="brand-name logo-mark flex-none text-sm uppercase md:hidden lg:block">
+            <div className="relative top-[1px] flex-none font-medium uppercase tracking-[0.22em] text-[#8B5E26] md:hidden lg:block md:text-base">
               {SITE_NAME}
             </div>
           </Link>

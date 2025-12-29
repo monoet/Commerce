@@ -66,6 +66,10 @@ body {
   max-width: 18ch;
 }
 
+.font-heading {
+  font-family: var(--font-heading);
+}
+
 .brand-name {
   font-family: var(--font-heading);
   font-weight: 400;
@@ -105,8 +109,8 @@ body {
     rgba(156, 107, 47, 0.18),
     transparent
   );
-  filter: blur(22px);
-  opacity: 0.95;
+  filter: blur(28px);
+  opacity: 0.75;
 }
 
 .hero-beam::after {
@@ -118,5 +122,5 @@ body {
     rgba(255, 255, 255, 0.45),
     transparent 60%
   );
-  opacity: 0.65;
+  opacity: 0.5;
 }

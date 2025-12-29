@@ -58,17 +58,18 @@ const ITEMS = [
 
 export default function FeaturedItems() {
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 pb-16 pt-8 sm:px-6">
+    <section className="bg-[linear-gradient(180deg,rgb(var(--hero-ivory)),rgb(var(--bg)))] pb-16 pt-10">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
       <div className="mb-8 flex items-end justify-between gap-6">
         <div>
-          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[rgb(var(--fg))]">
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[rgb(var(--accent))]">
             Favoritos del atelier
           </p>
-          <h2 className="mt-3 text-3xl font-semibold text-[rgb(var(--fg))] sm:text-4xl">
+          <h2 className="font-heading mt-3 text-3xl font-medium tracking-[-0.01em] text-[rgb(var(--fg))] sm:text-4xl">
             Piezas nuevas con brillo suave
           </h2>
         </div>
-        <span className="rounded-full border border-[rgb(var(--border))] bg-[rgb(var(--bg))] px-3 py-1 text-xs uppercase tracking-[0.2em] text-[rgb(var(--muted))]">
+        <span className="rounded-full border border-[rgb(var(--accent))] bg-transparent px-3 py-1 text-xs uppercase tracking-[0.2em] text-[rgb(var(--accent))]">
           Edicion limitada
         </span>
       </div>
@@ -98,7 +99,7 @@ export default function FeaturedItems() {
                 className="object-cover opacity-0 transition duration-500 group-hover:opacity-100"
               />
               {item.tag ? (
-                <span className="absolute left-4 top-4 rounded-full border border-[rgb(var(--border))] bg-[rgb(var(--bg))] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-[rgb(var(--muted))]">
+                <span className="absolute left-4 top-4 rounded-full border border-[rgb(var(--accent))] bg-transparent px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-[rgb(var(--accent))]">
                   {item.tag}
                 </span>
               ) : null}
@@ -117,6 +118,7 @@ export default function FeaturedItems() {
           </div>
           );
         })}
+      </div>
       </div>
     </section>
   );
