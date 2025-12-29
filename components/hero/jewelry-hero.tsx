@@ -60,11 +60,8 @@ export default function JewelryHero() {
   const preset = LIGHT_PILLAR_PRESETS.balanced;
 
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[rgb(var(--bg))]" />
-        <div className="absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[rgb(var(--border))]/60 blur-3xl" />
-      </div>
+    <section className="relative overflow-hidden bg-[linear-gradient(90deg,rgb(var(--hero-sand)),rgb(var(--hero-ivory)))]">
+      <div className="hero-beam absolute inset-0 pointer-events-none" />
       <LightPillar
         className={preset.className}
         topColor={preset.topColor}

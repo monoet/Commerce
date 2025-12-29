@@ -15,7 +15,7 @@ export default function Search() {
         placeholder="Search for products..."
         autoComplete="off"
         defaultValue={searchParams?.get('q') || ''}
-        className="text-md w-full rounded-lg border border-[rgb(var(--bg))] bg-[rgb(var(--bg))] px-4 py-2 text-[rgb(var(--ink))] placeholder:text-[rgb(var(--muted))] focus:outline-none focus:ring-2 focus:ring-white/40 md:text-sm"
+        className="text-md w-full rounded-lg border border-[rgb(var(--border))] bg-[rgb(var(--card))] px-4 py-2 text-[rgb(var(--fg))] placeholder:text-[rgb(var(--muted))] focus:outline-none focus:ring-2 focus:ring-[rgb(var(--border))] md:text-sm"
       />
       <div className="absolute right-0 top-0 mr-3 flex h-full items-center">
         <MagnifyingGlassIcon className="h-4" />
@@ -29,7 +29,7 @@ export function SearchSkeleton() {
     <form className="w-max-[550px] relative w-full lg:w-80 xl:w-full">
       <input
         placeholder="Search for products..."
-        className="w-full rounded-lg border border-[rgb(var(--bg))] bg-[rgb(var(--bg))] px-4 py-2 text-sm text-[rgb(var(--ink))] placeholder:text-[rgb(var(--muted))] focus:outline-none focus:ring-2 focus:ring-white/40"
+        className="w-full rounded-lg border border-[rgb(var(--border))] bg-[rgb(var(--card))] px-4 py-2 text-sm text-[rgb(var(--fg))] placeholder:text-[rgb(var(--muted))] focus:outline-none focus:ring-2 focus:ring-[rgb(var(--border))]"
       />
       <div className="absolute right-0 top-0 mr-3 flex h-full items-center">
         <MagnifyingGlassIcon className="h-4" />

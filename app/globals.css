@@ -43,6 +43,8 @@ button {
   --border: 230 221 210;
   --fg: var(--ink);
   --card: var(--surface);
+  --hero-sand: 238 226 210;
+  --hero-ivory: 252 248 242;
 }
 
 html,
@@ -76,4 +78,45 @@ body {
 
 .logo-mark:hover {
   color: rgb(var(--ink));
+}
+
+.logo-mark,
+.logo-mark svg {
+  color: rgb(var(--accent));
+}
+
+.logo-mark svg * {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+.hero-beam::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  left: 50%;
+  width: 55%;
+  transform: translateX(-50%) rotate(-8deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(156, 107, 47, 0.22),
+    rgba(255, 255, 255, 0.35),
+    rgba(156, 107, 47, 0.18),
+    transparent
+  );
+  filter: blur(22px);
+  opacity: 0.95;
+}
+
+.hero-beam::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    80% 60% at 20% 35%,
+    rgba(255, 255, 255, 0.45),
+    transparent 60%
+  );
+  opacity: 0.65;
 }
