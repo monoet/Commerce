@@ -58,6 +58,27 @@ export default function LightPillar({
   const sceneRef = useRef<THREE.Scene | null>(null);
   const cameraRef = useRef<THREE.OrthographicCamera | null>(null);
   const geometryRef = useRef<THREE.PlaneGeometry | null>(null);
+  const uniformsRef = useRef({
+    uTime: { value: 0 },
+    uResolution: { value: new THREE.Vector2(1, 1) },
+    uMouse: { value: new THREE.Vector2(0, 0) },
+
+    uTopColor: { value: new THREE.Vector3(1, 1, 1) },
+    uBottomColor: { value: new THREE.Vector3(1, 1, 1) },
+    uAccentColor: { value: new THREE.Vector3(1, 1, 1) },
+
+    uIntensity: { value: 0 },
+    uInteractive: { value: false },
+
+    uGlowAmount: { value: 0 },
+    uPillarWidth: { value: 0 },
+    uPillarHeight: { value: 0 },
+    uNoiseIntensity: { value: 0 },
+    uPillarRotation: { value: 0 },
+
+    uShimmer: { value: 0 },
+    uOpacity: { value: 0 }
+  });
 
   const mouseRef = useRef(new THREE.Vector2(0, 0));
   const timeRef = useRef(0);
@@ -261,30 +282,27 @@ export default function LightPillar({
       }
     `;
 
+    const uniforms = uniformsRef.current;
+    uniforms.uTime.value = 0;
+    uniforms.uResolution.value.set(width, height);
+    uniforms.uMouse.value = mouseRef.current;
+    uniforms.uTopColor.value.copy(topVec);
+    uniforms.uBottomColor.value.copy(bottomVec);
+    uniforms.uAccentColor.value.copy(accentVec);
+    uniforms.uIntensity.value = intensity;
+    uniforms.uInteractive.value = interactive;
+    uniforms.uGlowAmount.value = glowAmount;
+    uniforms.uPillarWidth.value = pillarWidth;
+    uniforms.uPillarHeight.value = pillarHeight;
+    uniforms.uNoiseIntensity.value = noiseIntensity;
+    uniforms.uPillarRotation.value = pillarRotation;
+    uniforms.uShimmer.value = shimmer;
+    uniforms.uOpacity.value = opacity;
+
     const material = new THREE.ShaderMaterial({
       vertexShader,
       fragmentShader,
-      uniforms: {
-        uTime: { value: 0 },
-        uResolution: { value: new THREE.Vector2(width, height) },
-        uMouse: { value: mouseRef.current },
-
-        uTopColor: { value: topVec.clone() },
-        uBottomColor: { value: bottomVec.clone() },
-        uAccentColor: { value: accentVec.clone() },
-
-        uIntensity: { value: intensity },
-        uInteractive: { value: interactive },
-
-        uGlowAmount: { value: glowAmount },
-        uPillarWidth: { value: pillarWidth },
-        uPillarHeight: { value: pillarHeight },
-        uNoiseIntensity: { value: noiseIntensity },
-        uPillarRotation: { value: pillarRotation },
-
-        uShimmer: { value: shimmer },
-        uOpacity: { value: opacity }
-      },
+      uniforms,
       transparent: true,
       depthWrite: false,
       depthTest: false
@@ -314,8 +332,7 @@ export default function LightPillar({
       if (!rendererRef.current || !materialRef.current) return;
       const { w: nextWidth, h: nextHeight } = getSize();
       rendererRef.current.setSize(nextWidth, nextHeight);
-      const uResolution = materialRef.current?.uniforms?.uResolution;
-      if (uResolution) uResolution.value.set(nextWidth, nextHeight);
+      uniformsRef.current.uResolution.value.set(nextWidth, nextHeight);
     });
     ro.observe(container);
 
@@ -333,7 +350,7 @@ export default function LightPillar({
       const dt = now - last;
       if (dt >= frame) {
         timeRef.current += 0.016 * effectiveRotationSpeed;
-        material.uniforms.uTime.value = timeRef.current;
+        uniformsRef.current.uTime.value = timeRef.current;
         renderer.render(scene, camera);
         last = now - (dt % frame);
       }
@@ -384,19 +401,19 @@ export default function LightPillar({
     const material = materialRef.current;
     if (!material) return;
 
-    material.uniforms.uTopColor.value.copy(topVec);
-    material.uniforms.uBottomColor.value.copy(bottomVec);
-    material.uniforms.uAccentColor.value.copy(accentVec);
+    uniformsRef.current.uTopColor.value.copy(topVec);
+    uniformsRef.current.uBottomColor.value.copy(bottomVec);
+    uniformsRef.current.uAccentColor.value.copy(accentVec);
 
-    material.uniforms.uIntensity.value = intensity;
-    material.uniforms.uGlowAmount.value = glowAmount;
-    material.uniforms.uPillarWidth.value = pillarWidth;
-    material.uniforms.uPillarHeight.value = pillarHeight;
-    material.uniforms.uNoiseIntensity.value = noiseIntensity;
-    material.uniforms.uPillarRotation.value = pillarRotation;
-    material.uniforms.uShimmer.value = shimmer;
-    material.uniforms.uOpacity.value = opacity;
-    material.uniforms.uInteractive.value = interactive;
+    uniformsRef.current.uIntensity.value = intensity;
+    uniformsRef.current.uGlowAmount.value = glowAmount;
+    uniformsRef.current.uPillarWidth.value = pillarWidth;
+    uniformsRef.current.uPillarHeight.value = pillarHeight;
+    uniformsRef.current.uNoiseIntensity.value = noiseIntensity;
+    uniformsRef.current.uPillarRotation.value = pillarRotation;
+    uniformsRef.current.uShimmer.value = shimmer;
+    uniformsRef.current.uOpacity.value = opacity;
+    uniformsRef.current.uInteractive.value = interactive;
   }, [
     topVec,
     bottomVec,
