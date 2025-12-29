@@ -13,13 +13,13 @@ export async function Navbar() {
   const menu = await getMenu('next-js-frontend-header-menu');
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between border-b border-[#E6DDD2] bg-[#FBF7F2]/70 p-4 backdrop-blur-xl lg:px-6">
+    <nav className="sticky top-0 z-50 flex items-center justify-between border-b border-[#E6DDD2]/70 bg-[#FBF7F2]/55 p-4 backdrop-blur-xl supports-[backdrop-filter]:bg-[#FBF7F2]/45 lg:px-6">
       <div className="block flex-none md:hidden">
         <Suspense fallback={null}>
           <MobileMenu menu={menu} />
         </Suspense>
       </div>
-      <div className="flex w-full items-center">
+      <div className="relative flex w-full items-center before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(120%_80%_at_50%_0%,rgba(255,255,255,0.55),transparent_60%)]">
         <div className="flex w-full md:w-1/3">
           <Link
             href="/"
