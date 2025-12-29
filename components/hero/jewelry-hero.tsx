@@ -85,37 +85,33 @@ export default function JewelryHero() {
         pillarRotation={preset.pillarRotation}
       />
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-8 text-[#2C2621]">
-        <div className="max-w-2xl">
-          <p className="text-xs font-medium uppercase tracking-[0.35em] text-[#6F655C]">
-            Atelier de perlas
-          </p>
-          <h1 className="mt-4 text-4xl font-semibold leading-tight text-[#1E1A16] sm:text-5xl lg:text-6xl">
-            Joyeria minimal con brillo nacarado.
-          </h1>
-          <p className="mt-4 text-base leading-relaxed text-[#4C433B] sm:text-lg">
-            Piezas esenciales, luz suave y un acabado calido que se siente
-            editorial. Disenado para acompanarte todos los dias.
-          </p>
-        </div>
-        <div className="flex flex-wrap gap-4">
-          <Link
-            href="/search"
-            className="rounded-full px-6 py-3 text-sm font-medium tracking-wide transition"
-            style={{ backgroundColor: '#1E1A16', color: '#FBF7F2' }}
-          >
-            Ver colección
-          </Link>
-          <Link
-            href="/search"
-            className="rounded-full border px-6 py-3 text-sm font-medium tracking-wide backdrop-blur transition"
-            style={{
-              backgroundColor: '#F4EDE4',
-              borderColor: '#D8CBBE',
-              color: '#1E1A16'
-            }}
-          >
-            Comprar ahora
-          </Link>
+        <div className="relative rounded-[28px] bg-[radial-gradient(80%_80%_at_30%_20%,rgba(30,26,22,0.26),rgba(30,26,22,0.08)_55%,transparent_78%)] px-10 py-10 ring-1 ring-white/10">
+          <div className="max-w-2xl">
+            <p className="text-xs font-medium uppercase tracking-[0.35em] text-white/75 drop-shadow-[0_2px_18px_rgba(30,26,22,0.35)]">
+              Atelier de perlas
+            </p>
+            <h1 className="mt-4 text-4xl font-semibold leading-tight text-white drop-shadow-[0_2px_28px_rgba(30,26,22,0.38)] sm:text-5xl lg:text-6xl">
+              Joyeria minimal con brillo nacarado.
+            </h1>
+            <p className="mt-4 text-base leading-relaxed text-white/85 drop-shadow-[0_2px_16px_rgba(30,26,22,0.32)] sm:text-lg">
+              Piezas esenciales, luz suave y un acabado calido que se siente
+              editorial. Disenado para acompanarte todos los dias.
+            </p>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <Link
+              href="/search"
+              className="rounded-full border border-white/40 bg-white/85 px-6 py-3 text-sm font-medium tracking-wide text-[#1E1A16] transition hover:bg-white"
+            >
+              Ver colección
+            </Link>
+            <Link
+              href="/search"
+              className="rounded-full border border-white/35 px-6 py-3 text-sm font-medium tracking-wide text-white transition hover:bg-white/10"
+            >
+              Comprar ahora
+            </Link>
+          </div>
         </div>
         <div className="grid max-w-3xl gap-6 text-sm text-[#4C433B] sm:grid-cols-3">
           <div>
