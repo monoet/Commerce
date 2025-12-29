@@ -26,6 +26,7 @@ type LightPillarProps = {
   mixBlendMode?: CSSProperties['mixBlendMode'];
   pillarRotation?: number;
   respectReducedMotion?: boolean;
+  timeSpeed?: number;
 };
 
 export default function LightPillar({
@@ -48,7 +49,8 @@ export default function LightPillar({
 
   mixBlendMode = 'soft-light',
   pillarRotation = 0,
-  respectReducedMotion = true
+  respectReducedMotion = true,
+  timeSpeed
 }: LightPillarProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -92,10 +94,10 @@ export default function LightPillar({
     );
   }, []);
 
-  const effectiveRotationSpeed = useMemo(() => {
+  const effectiveTimeSpeed = useMemo(() => {
     if (respectReducedMotion && prefersReducedMotion) return 0;
-    return rotationSpeed;
-  }, [respectReducedMotion, prefersReducedMotion, rotationSpeed]);
+    return timeSpeed ?? rotationSpeed;
+  }, [respectReducedMotion, prefersReducedMotion, timeSpeed, rotationSpeed]);
 
   const parseColor = (hex: string) => {
     const c = new THREE.Color(hex);
@@ -349,7 +351,7 @@ export default function LightPillar({
 
       const dt = now - last;
       if (dt >= frame) {
-        timeRef.current += 0.016 * effectiveRotationSpeed;
+        timeRef.current += 0.016 * effectiveTimeSpeed;
         uniformsRef.current.uTime.value = timeRef.current;
         renderer.render(scene, camera);
         last = now - (dt % frame);
@@ -382,7 +384,7 @@ export default function LightPillar({
     };
   }, [
     webGLSupported,
-    effectiveRotationSpeed,
+    effectiveTimeSpeed,
     interactive,
     topVec,
     bottomVec,

@@ -9,6 +9,7 @@ const LIGHT_PILLAR_PRESETS = {
     accentColor: '#E9D2C5',
     intensity: 0.75,
     rotationSpeed: 0.14,
+    timeSpeed: 0.28,
     glowAmount: 0.004,
     pillarWidth: 2.5,
     pillarHeight: 0.58,
@@ -26,6 +27,7 @@ const LIGHT_PILLAR_PRESETS = {
     accentColor: '#E9D2C5',
     intensity: 1.08,
     rotationSpeed: 0.14,
+    timeSpeed: 0.42,
     glowAmount: 0.0085,
     pillarWidth: 2.45,
     pillarHeight: 0.6,
@@ -43,6 +45,7 @@ const LIGHT_PILLAR_PRESETS = {
     accentColor: '#F0D2C2',
     intensity: 1.15,
     rotationSpeed: 0.18,
+    timeSpeed: 0.55,
     glowAmount: 0.009,
     pillarWidth: 2.35,
     pillarHeight: 0.62,
@@ -70,6 +73,7 @@ export default function JewelryHero() {
         accentColor={preset.accentColor}
         intensity={preset.intensity}
         rotationSpeed={preset.rotationSpeed}
+        timeSpeed={preset.timeSpeed}
         glowAmount={preset.glowAmount}
         pillarWidth={preset.pillarWidth}
         pillarHeight={preset.pillarHeight}
