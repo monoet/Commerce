@@ -1,7 +1,7 @@
 import { CartProvider } from 'components/cart/cart-context';
 import { Navbar } from 'components/layout/navbar';
 import { WelcomeToast } from 'components/welcome-toast';
-import { Cormorant_Garamond, Manrope } from 'next/font/google';
+import { DM_Sans, Gilda_Display } from 'next/font/google';
 import { getCart } from 'lib/shopify';
 import { ReactNode } from 'react';
 import { Toaster } from 'sonner';
@@ -10,16 +10,16 @@ import { baseUrl } from 'lib/utils';
 
 const { SITE_NAME } = process.env;
 
-const headingFont = Cormorant_Garamond({
+const headingFont = Gilda_Display({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400'],
   variable: '--font-heading',
   display: 'swap'
 });
 
-const bodyFont = Manrope({
+const bodyFont = DM_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-body',
   display: 'swap'
 });
@@ -46,7 +46,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
-      <body className="min-h-screen font-sans antialiased">
+      <body className="min-h-screen antialiased">
         <CartProvider cartPromise={cart}>
           <div className="min-h-screen flex flex-col">
             <Navbar />

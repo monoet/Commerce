@@ -25,10 +25,10 @@ export async function Navbar() {
           <Link
             href="/"
             prefetch={true}
-            className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
+            className="logo-mark mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
           >
             <LogoSquare />
-            <div className="ml-2 flex-none text-sm font-medium uppercase text-[#2F5E4E] md:hidden lg:block">
+            <div className="brand-name logo-mark ml-2 flex-none text-sm uppercase md:hidden lg:block">
               {SITE_NAME}
             </div>
           </Link>

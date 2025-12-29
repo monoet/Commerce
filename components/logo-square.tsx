@@ -5,17 +5,17 @@ export default function LogoSquare({ size }: { size?: 'sm' | undefined }) {
   return (
     <div
       className={clsx(
-        'flex flex-none items-center justify-center border border-[rgb(var(--border))] bg-[rgb(var(--bg))] text-[#2F5E4E] transition-colors hover:text-[#264C3F]',
+        'logo-mark flex flex-none items-center justify-center border border-[rgb(var(--border))] bg-[rgb(var(--bg))] transition-colors',
         {
-          'h-[40px] w-[40px] rounded-xl': !size,
-          'h-[30px] w-[30px] rounded-lg': size === 'sm'
+          'h-9 w-9 rounded-xl md:h-11 md:w-11': !size,
+          'h-8 w-8 rounded-lg md:h-10 md:w-10': size === 'sm'
         }
       )}
     >
       <LogoIcon
         className={clsx({
-          'h-[16px] w-[16px]': !size,
-          'h-[10px] w-[10px]': size === 'sm'
+          'h-5 w-5 md:h-6 md:w-6': !size,
+          'h-4 w-4 md:h-5 md:w-5': size === 'sm'
         })}
       />
     </div>
