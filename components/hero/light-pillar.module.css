@@ -1,0 +1,34 @@
+.container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.04);
+  color: rgba(20, 20, 20, 0.45);
+  font-size: 14px;
+}
+
+.mask {
+  -webkit-mask-image: radial-gradient(
+    circle at 50% 40%,
+    #000 0%,
+    #000 40%,
+    transparent 75%
+  );
+  mask-image: radial-gradient(
+    circle at 50% 40%,
+    #000 0%,
+    #000 40%,
+    transparent 75%
+  );
+}
