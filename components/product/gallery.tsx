@@ -14,7 +14,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
   const previousImageIndex = imageIndex === 0 ? images.length - 1 : imageIndex - 1;
 
   const buttonClassName =
-    'h-full px-6 transition-all ease-in-out hover:scale-110 hover:text-[#2F5E4E] dark:hover:text-white flex items-center justify-center';
+    'flex h-full items-center justify-center px-6 transition-all ease-in-out hover:scale-110 hover:text-[rgb(var(--fg))]';
 
   return (
     <form>
@@ -32,7 +32,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
 
         {images.length > 1 ? (
           <div className="absolute bottom-[15%] flex w-full justify-center">
-            <div className="mx-auto flex h-11 items-center rounded-full border border-[#2F5E4E] bg-[#2F5E4E]/80 text-neutral-500 backdrop-blur-sm dark:border-black dark:bg-[#2F5E4E]/80">
+            <div className="mx-auto flex h-11 items-center rounded-full border border-[rgb(var(--border))] bg-[rgb(var(--card))]/80 text-[rgb(var(--muted))] backdrop-blur-sm">
               <button
                 formAction={() => {
                   const newState = updateImage(previousImageIndex.toString());
@@ -43,7 +43,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
               >
                 <ArrowLeftIcon className="h-5" />
               </button>
-              <div className="mx-1 h-6 w-px bg-[#2F5E4E]"></div>
+              <div className="mx-1 h-6 w-px bg-[rgb(var(--border))]"></div>
               <button
                 formAction={() => {
                   const newState = updateImage(nextImageIndex.toString());

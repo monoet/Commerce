@@ -35,7 +35,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
       <button
         onClick={openMobileMenu}
         aria-label="Open mobile menu"
-        className="flex h-11 w-11 items-center justify-center rounded-md border border-[#2F5E4E] bg-[#2F5E4E]/80 text-[rgb(var(--fg))] transition-colors hover:bg-[#2F5E4E] md:hidden"
+        className="flex h-11 w-11 items-center justify-center rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--card))] text-[rgb(var(--fg))] transition-colors hover:bg-[rgb(var(--bg))] md:hidden"
       >
         <Bars3Icon className="h-4" />
       </button>
@@ -50,7 +50,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
             leaveFrom="opacity-100 backdrop-blur-[.5px]"
             leaveTo="opacity-0 backdrop-blur-none"
           >
-            <div className="fixed inset-0 bg-[#1E1A16]/10" aria-hidden="true" />
+            <div className="fixed inset-0 bg-[rgb(var(--fg))]/10" aria-hidden="true" />
           </Transition.Child>
           <Transition.Child
             as={Fragment}
@@ -61,10 +61,10 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-[-100%]"
           >
-            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-[#2F5E4E] pb-6 text-[rgb(var(--fg))]">
+            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-[rgb(var(--bg))] pb-6 text-[rgb(var(--fg))]">
               <div className="p-4">
                 <button
-                  className="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-[#2F5E4E] bg-[#2F5E4E]/80 text-[rgb(var(--fg))] transition-colors"
+                  className="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--card))] text-[rgb(var(--fg))] transition-colors hover:bg-[rgb(var(--bg))]"
                   onClick={closeMobileMenu}
                   aria-label="Close mobile menu"
                 >

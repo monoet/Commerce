@@ -10,7 +10,7 @@ const { COMPANY_NAME, SITE_NAME } = process.env;
 export default async function Footer() {
   const currentYear = new Date().getFullYear();
   const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '');
-  const skeleton = 'w-full h-6 animate-pulse rounded-sm bg-[#2F5E4E]';
+  const skeleton = 'w-full h-6 animate-pulse rounded-sm bg-[rgb(var(--border))]';
   const menu = await getMenu('next-js-frontend-footer-menu');
   const copyrightName = COMPANY_NAME || SITE_NAME || '';
 
@@ -18,7 +18,7 @@ export default async function Footer() {
     <footer className="w-full border-t border-[rgb(var(--border))] bg-[rgb(var(--bg))] text-sm text-[rgb(var(--fg))]">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0">
         <div>
-          <Link className="flex items-center gap-2 text-[rgb(var(--fg))] md:pt-1" href="/">
+          <Link className="flex items-center gap-2 text-[#2F5E4E] md:pt-1" href="/">
             <LogoSquare size="sm" />
             <span className="uppercase">{SITE_NAME}</span>
           </Link>

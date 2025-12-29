@@ -74,7 +74,7 @@ export default function CartModal() {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-[#2F5E4E] bg-[#2F5E4E]/90 p-6 text-[rgb(var(--fg))] backdrop-blur-xl md:w-[390px]">
+            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-[rgb(var(--border))] bg-[rgb(var(--card))]/95 p-6 text-[rgb(var(--fg))] backdrop-blur-xl md:w-[390px]">
               <div className="flex items-center justify-between">
                 <p className="text-lg font-semibold">My Cart</p>
                 <button aria-label="Close cart" onClick={closeCart}>
@@ -119,7 +119,7 @@ export default function CartModal() {
                         return (
                           <li
                             key={i}
-                            className="flex w-full flex-col border-b border-[#2F5E4E] dark:border-[#2F5E4E]"
+                            className="flex w-full flex-col border-b border-[rgb(var(--border))]"
                           >
                             <div className="relative flex w-full flex-row justify-between px-1 py-4">
                               <div className="absolute z-40 -ml-1 -mt-2">
@@ -129,7 +129,7 @@ export default function CartModal() {
                                 />
                               </div>
                               <div className="flex flex-row">
-                                <div className="relative h-16 w-16 overflow-hidden rounded-md border border-[#2F5E4E] bg-[#2F5E4E] dark:border-[#2F5E4E] dark:bg-[#2F5E4E] dark:hover:bg-[#2F5E4E]">
+                                <div className="relative h-16 w-16 overflow-hidden rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--bg))]">
                                   <Image
                                     className="h-full w-full object-cover"
                                     width={64}
@@ -155,7 +155,7 @@ export default function CartModal() {
                                     </span>
                                     {item.merchandise.title !==
                                     DEFAULT_OPTION ? (
-                                      <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                                      <p className="text-sm text-[rgb(var(--muted))]">
                                         {item.merchandise.title}
                                       </p>
                                     ) : null}
@@ -170,7 +170,7 @@ export default function CartModal() {
                                     item.cost.totalAmount.currencyCode
                                   }
                                 />
-                                <div className="ml-auto flex h-9 flex-row items-center rounded-full border border-[#2F5E4E] dark:border-[#2F5E4E]">
+                                <div className="ml-auto flex h-9 flex-row items-center rounded-full border border-[rgb(var(--border))]">
                                   <EditItemQuantityButton
                                     item={item}
                                     type="minus"
@@ -193,8 +193,8 @@ export default function CartModal() {
                         );
                       })}
                   </ul>
-                  <div className="py-4 text-sm text-neutral-500 dark:text-neutral-400">
-                    <div className="mb-3 flex items-center justify-between border-b border-[#2F5E4E] pb-1 dark:border-[#2F5E4E]">
+                  <div className="py-4 text-sm text-[rgb(var(--muted))]">
+                    <div className="mb-3 flex items-center justify-between border-b border-[rgb(var(--border))] pb-1">
                       <p>Taxes</p>
                       <Price
                         className="text-right text-base text-[rgb(var(--fg))]"
@@ -202,11 +202,11 @@ export default function CartModal() {
                         currencyCode={cart.cost.totalTaxAmount.currencyCode}
                       />
                     </div>
-                    <div className="mb-3 flex items-center justify-between border-b border-[#2F5E4E] pb-1 pt-1 dark:border-[#2F5E4E]">
+                    <div className="mb-3 flex items-center justify-between border-b border-[rgb(var(--border))] pb-1 pt-1">
                       <p>Shipping</p>
                       <p className="text-right">Calculated at checkout</p>
                     </div>
-                    <div className="mb-3 flex items-center justify-between border-b border-[#2F5E4E] pb-1 pt-1 dark:border-[#2F5E4E]">
+                    <div className="mb-3 flex items-center justify-between border-b border-[rgb(var(--border))] pb-1 pt-1">
                       <p>Total</p>
                       <Price
                         className="text-right text-base text-[rgb(var(--fg))]"
@@ -230,7 +230,7 @@ export default function CartModal() {
 
 function CloseCart({ className }: { className?: string }) {
   return (
-    <div className="relative flex h-11 w-11 items-center justify-center rounded-md border border-[#2F5E4E] text-[rgb(var(--fg))] transition-colors">
+    <div className="relative flex h-11 w-11 items-center justify-center rounded-md border border-[rgb(var(--border))] text-[rgb(var(--fg))] transition-colors hover:bg-[rgb(var(--bg))]">
       <XMarkIcon
         className={clsx(
           'h-6 transition-all ease-in-out hover:scale-110',
@@ -246,11 +246,11 @@ function CheckoutButton() {
 
   return (
     <button
-      className="block w-full rounded-full bg-blue-600 p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
+      className="block w-full rounded-full bg-[#2F5E4E] p-3 text-center text-sm font-medium text-[rgb(var(--bg))] opacity-90 transition hover:bg-[#264C3F]"
       type="submit"
       disabled={pending}
     >
-      {pending ? <LoadingDots className="bg-[#2F5E4E]" /> : 'Proceed to Checkout'}
+      {pending ? <LoadingDots className="bg-[rgb(var(--bg))]" /> : 'Proceed to Checkout'}
     </button>
   );
 }

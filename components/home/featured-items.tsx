@@ -78,7 +78,7 @@ export default function FeaturedItems() {
           return (
           <div
             key={item.title}
-            className="group flex h-[360px] w-full flex-col overflow-hidden rounded-2xl bg-[rgb(var(--bg))] shadow-md"
+            className="group flex h-[360px] w-full flex-col overflow-hidden rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--card))] shadow-sm"
           >
             <div className="relative h-[200px] w-full overflow-hidden bg-[rgb(var(--bg))]">
               <Image
@@ -96,7 +96,7 @@ export default function FeaturedItems() {
                 className="object-cover opacity-0 transition duration-500 group-hover:opacity-100"
               />
               {item.tag ? (
-                <span className="absolute left-4 top-4 rounded-full bg-[rgb(var(--bg))]/90 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-[rgb(var(--fg))]">
+                <span className="absolute left-4 top-4 rounded-full bg-[rgb(var(--card))]/90 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-[rgb(var(--fg))]">
                   {item.tag}
                 </span>
               ) : null}

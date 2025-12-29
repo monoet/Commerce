@@ -72,12 +72,12 @@ export function VariantSelector({
                 disabled={!isAvailableForSale}
                 title={`${option.name} ${value}${!isAvailableForSale ? ' (Out of Stock)' : ''}`}
                 className={clsx(
-                  'flex min-w-[48px] items-center justify-center rounded-full border bg-[#2F5E4E] px-2 py-1 text-sm dark:border-[#2F5E4E] dark:bg-[#2F5E4E]',
+                  'flex min-w-[48px] items-center justify-center rounded-full border border-[rgb(var(--border))] bg-[rgb(var(--card))] px-2 py-1 text-sm text-[rgb(var(--fg))]',
                   {
-                    'cursor-default ring-2 ring-blue-600': isActive,
-                    'ring-1 ring-transparent transition duration-300 ease-in-out hover:ring-blue-600':
+                    'cursor-default ring-2 ring-[rgb(var(--fg))]/30': isActive,
+                    'ring-1 ring-transparent transition duration-300 ease-in-out hover:ring-[rgb(var(--fg))]/30':
                       !isActive && isAvailableForSale,
-                    'relative z-10 cursor-not-allowed overflow-hidden bg-[#2F5E4E] text-neutral-500 ring-1 ring-neutral-300 before:absolute before:inset-x-0 before:-z-10 before:h-px before:-rotate-45 before:bg-[#2F5E4E] before:transition-transform dark:bg-[#2F5E4E] dark:text-neutral-400 dark:ring-neutral-700 dark:before:bg-[#2F5E4E]':
+                    'relative z-10 cursor-not-allowed overflow-hidden bg-[rgb(var(--bg))] text-[rgb(var(--muted))] ring-1 ring-[rgb(var(--border))] before:absolute before:inset-x-0 before:-z-10 before:h-px before:-rotate-45 before:bg-[rgb(var(--border))] before:transition-transform':
                       !isAvailableForSale
                   }
                 )}

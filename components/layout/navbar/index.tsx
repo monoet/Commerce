@@ -28,7 +28,7 @@ export async function Navbar() {
             className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
           >
             <LogoSquare />
-            <div className="ml-2 flex-none text-sm font-medium uppercase text-[rgb(var(--fg))] md:hidden lg:block">
+            <div className="ml-2 flex-none text-sm font-medium uppercase text-[#2F5E4E] md:hidden lg:block">
               {SITE_NAME}
             </div>
           </Link>

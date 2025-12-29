@@ -99,13 +99,13 @@ export default function JewelryHero() {
           <div className="mt-6 flex flex-wrap gap-4">
             <Link
               href="/search"
-              className="rounded-full border border-[rgb(var(--border))] bg-[#2F5E4E] px-6 py-3 text-sm font-medium text-[rgb(var(--fg))] transition hover:bg-[#264C3F]"
+              className="rounded-full border border-[#2F5E4E] bg-[#2F5E4E] px-6 py-3 text-sm font-medium text-[rgb(var(--bg))] transition hover:bg-[#264C3F]"
             >
               Ver coleccion
             </Link>
             <Link
               href="/search"
-              className="rounded-full border border-[rgb(var(--border))] bg-[#2F5E4E]/15 px-6 py-3 text-sm font-medium text-[rgb(var(--fg))] transition hover:bg-[#2F5E4E]/25"
+              className="rounded-full border border-[rgb(var(--border))] bg-transparent px-6 py-3 text-sm font-medium text-[rgb(var(--fg))] transition hover:bg-[rgb(var(--bg))]"
             >
               Comprar ahora
             </Link>
