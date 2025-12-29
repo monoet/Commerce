@@ -84,7 +84,7 @@ export default function JewelryHero() {
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#8A6A3D]">
             Atelier de perlas
           </p>
-          <h1 className="mt-5 text-5xl font-semibold leading-[1.02] text-white drop-shadow-[0_2px_20px_rgba(30,26,22,0.28)] sm:text-6xl">
+          <h1 className="mt-5 text-5xl font-semibold leading-[1.02] text-[#2C2621] sm:text-6xl">
             Joyeria minimal con
             <br />
             brillo nacarado.

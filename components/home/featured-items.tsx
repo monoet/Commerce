@@ -4,38 +4,50 @@ const ITEMS = [
   {
     title: 'Collar Aurora',
     price: '$48',
-    image:
-      'https://images.pexels.com/photos/965989/pexels-photo-965989.jpeg?auto=compress&cs=tinysrgb&w=900'
+    images: [
+      'https://images.pexels.com/photos/965989/pexels-photo-965989.jpeg?auto=compress&cs=tinysrgb&w=900',
+      'https://images.pexels.com/photos/1458867/pexels-photo-1458867.jpeg?auto=compress&cs=tinysrgb&w=900'
+    ]
   },
   {
     title: 'Argollas Lino',
     price: '$36',
-    image:
-      'https://images.pexels.com/photos/1191531/pexels-photo-1191531.jpeg?auto=compress&cs=tinysrgb&w=900'
+    images: [
+      'https://images.pexels.com/photos/1191531/pexels-photo-1191531.jpeg?auto=compress&cs=tinysrgb&w=900',
+      'https://images.pexels.com/photos/2697616/pexels-photo-2697616.jpeg?auto=compress&cs=tinysrgb&w=900'
+    ]
   },
   {
     title: 'Anillo Marfil',
     price: '$28',
-    image:
-      'https://images.pexels.com/photos/2697616/pexels-photo-2697616.jpeg?auto=compress&cs=tinysrgb&w=900'
+    images: [
+      'https://images.pexels.com/photos/2697616/pexels-photo-2697616.jpeg?auto=compress&cs=tinysrgb&w=900',
+      'https://images.pexels.com/photos/1721944/pexels-photo-1721944.jpeg?auto=compress&cs=tinysrgb&w=900'
+    ]
   },
   {
     title: 'Pulsera Bruma',
     price: '$42',
-    image:
-      'https://images.pexels.com/photos/1458867/pexels-photo-1458867.jpeg?auto=compress&cs=tinysrgb&w=900'
+    images: [
+      'https://images.pexels.com/photos/1458867/pexels-photo-1458867.jpeg?auto=compress&cs=tinysrgb&w=900',
+      'https://images.pexels.com/photos/2950298/pexels-photo-2950298.jpeg?auto=compress&cs=tinysrgb&w=900'
+    ]
   },
   {
     title: 'Ear Cuff Perla',
     price: '$24',
-    image:
-      'https://images.pexels.com/photos/1721944/pexels-photo-1721944.jpeg?auto=compress&cs=tinysrgb&w=900'
+    images: [
+      'https://images.pexels.com/photos/1721944/pexels-photo-1721944.jpeg?auto=compress&cs=tinysrgb&w=900',
+      'https://images.pexels.com/photos/965989/pexels-photo-965989.jpeg?auto=compress&cs=tinysrgb&w=900'
+    ]
   },
   {
     title: 'Set Champagne',
     price: '$64',
-    image:
-      'https://images.pexels.com/photos/2950298/pexels-photo-2950298.jpeg?auto=compress&cs=tinysrgb&w=900'
+    images: [
+      'https://images.pexels.com/photos/2950298/pexels-photo-2950298.jpeg?auto=compress&cs=tinysrgb&w=900',
+      'https://images.pexels.com/photos/1191531/pexels-photo-1191531.jpeg?auto=compress&cs=tinysrgb&w=900'
+    ]
   }
 ];
 
@@ -57,20 +69,29 @@ export default function FeaturedItems() {
         {ITEMS.map((item) => (
           <div
             key={item.title}
-            className="overflow-hidden rounded-2xl border border-[#E6DDD2] bg-[#F6EFE6]/70"
+            className="group overflow-hidden rounded-2xl border border-[#E6DDD2] bg-white/40"
           >
-            <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#FBF7F2]">
+            <div className="relative w-full overflow-hidden bg-[#FBF7F2] aspect-square sm:aspect-[3/4]">
               <Image
-                src={item.image}
+                src={item.images[0]}
                 alt={item.title}
                 fill
                 sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 90vw"
-                className="object-cover"
+                className="object-cover transition duration-500 group-hover:scale-[1.03] group-hover:opacity-0"
+              />
+              <Image
+                src={item.images[1]}
+                alt={`${item.title} detalle`}
+                fill
+                sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 90vw"
+                className="object-cover opacity-0 transition duration-500 group-hover:opacity-100"
               />
             </div>
-            <div className="flex items-center justify-between px-5 py-4">
+            <div className="flex items-center justify-between px-4 py-3">
               <div>
-                <p className="text-sm font-medium text-[#8A6A3D]">{item.title}</p>
+                <p className="text-sm font-medium text-[#2C2621] group-hover:underline">
+                  {item.title}
+                </p>
                 <p className="mt-1 text-xs text-[#6F655C]">Acabado perlado</p>
               </div>
               <span className="text-sm font-semibold text-[#8A6A3D]">
