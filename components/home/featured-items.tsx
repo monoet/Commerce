@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+const FALLBACK_IMAGE = '/images/placeholder.jpg';
+
 const ITEMS = [
   {
     title: 'Collar Aurora',
@@ -70,8 +72,8 @@ export default function FeaturedItems() {
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {ITEMS.map((item) => {
-          const primaryImage = item.images?.[0];
-          const secondaryImage = item.images?.[1];
+          const primaryImage = item.images?.[0] ?? FALLBACK_IMAGE;
+          const secondaryImage = item.images?.[1] ?? FALLBACK_IMAGE;
 
           return (
           <div
@@ -79,28 +81,20 @@ export default function FeaturedItems() {
             className="group overflow-hidden rounded-2xl border border-[#E6DDD2] bg-white/40"
           >
             <div className="relative w-full overflow-hidden bg-[#FBF7F2] aspect-square sm:aspect-[3/4]">
-              {primaryImage ? (
-                <Image
-                  src={primaryImage}
-                  alt={item.title}
-                  fill
-                  sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 90vw"
-                  className="object-cover transition duration-500 group-hover:scale-[1.03] group-hover:opacity-0"
-                />
-              ) : (
-                <div className="absolute inset-0 grid place-items-center text-xs text-[#6F655C]">
-                  Sin imagen
-                </div>
-              )}
-              {secondaryImage ? (
-                <Image
-                  src={secondaryImage}
-                  alt={`${item.title} detalle`}
-                  fill
-                  sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 90vw"
-                  className="object-cover opacity-0 transition duration-500 group-hover:opacity-100"
-                />
-              ) : null}
+              <Image
+                src={primaryImage}
+                alt={item.title}
+                fill
+                sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 90vw"
+                className="object-cover transition duration-500 group-hover:scale-[1.03] group-hover:opacity-0"
+              />
+              <Image
+                src={secondaryImage}
+                alt={`${item.title} detalle`}
+                fill
+                sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 90vw"
+                className="object-cover opacity-0 transition duration-500 group-hover:opacity-100"
+              />
               {item.tag ? (
                 <span className="absolute left-4 top-4 rounded-full bg-[#F4EDE4]/90 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-[#8A6A3D]">
                   {item.tag}
