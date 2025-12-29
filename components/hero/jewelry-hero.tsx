@@ -24,13 +24,13 @@ const LIGHT_PILLAR_PRESETS = {
     topColor: '#F7F1E9',
     bottomColor: '#D6C4AE',
     accentColor: '#E9D2C5',
-    intensity: 0.95,
+    intensity: 1.08,
     rotationSpeed: 0.14,
-    glowAmount: 0.006,
+    glowAmount: 0.0085,
     pillarWidth: 2.45,
     pillarHeight: 0.6,
     noiseIntensity: 0.16,
-    shimmer: 0.3,
+    shimmer: 0.36,
     opacity: 1,
     mixBlendMode: 'screen' as const,
     interactive: false,
@@ -84,15 +84,15 @@ export default function JewelryHero() {
         interactive={preset.interactive}
         pillarRotation={preset.pillarRotation}
       />
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-8 text-neutral-800">
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-8 text-[#2C2621]">
         <div className="max-w-2xl">
-          <p className="text-xs font-medium uppercase tracking-[0.35em] text-neutral-500">
+          <p className="text-xs font-medium uppercase tracking-[0.35em] text-[#6F655C]">
             Atelier de perlas
           </p>
-          <h1 className="mt-4 text-4xl font-semibold leading-tight text-neutral-900 sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 text-4xl font-semibold leading-tight text-[#1E1A16] sm:text-5xl lg:text-6xl">
             Joyeria minimal con brillo nacarado.
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-neutral-600 sm:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-[#4C433B] sm:text-lg">
             Piezas esenciales, luz suave y un acabado calido que se siente
             editorial. Disenado para acompanarte todos los dias.
           </p>
@@ -100,28 +100,34 @@ export default function JewelryHero() {
         <div className="flex flex-wrap gap-4">
           <Link
             href="/search"
-            className="rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium tracking-wide text-neutral-50 transition hover:bg-neutral-800"
+            className="rounded-full px-6 py-3 text-sm font-medium tracking-wide transition"
+            style={{ backgroundColor: '#1E1A16', color: '#FBF7F2' }}
           >
             Ver colección
           </Link>
           <Link
             href="/search"
-            className="rounded-full border border-neutral-300 bg-white/80 px-6 py-3 text-sm font-medium tracking-wide text-neutral-700 backdrop-blur transition hover:border-neutral-400 hover:text-neutral-900"
+            className="rounded-full border px-6 py-3 text-sm font-medium tracking-wide backdrop-blur transition"
+            style={{
+              backgroundColor: '#F4EDE4',
+              borderColor: '#D8CBBE',
+              color: '#1E1A16'
+            }}
           >
             Comprar ahora
           </Link>
         </div>
-        <div className="grid max-w-3xl gap-6 text-sm text-neutral-600 sm:grid-cols-3">
+        <div className="grid max-w-3xl gap-6 text-sm text-[#4C433B] sm:grid-cols-3">
           <div>
-            <p className="text-neutral-900">Bano premium</p>
+            <p className="text-[#1E1A16]">Bano premium</p>
             <p className="mt-1">Acabado perlado y resistencia diaria.</p>
           </div>
           <div>
-            <p className="text-neutral-900">Envio cuidado</p>
+            <p className="text-[#1E1A16]">Envio cuidado</p>
             <p className="mt-1">Empaque delicado y protegido.</p>
           </div>
           <div>
-            <p className="text-neutral-900">Edicion limitada</p>
+            <p className="text-[#1E1A16]">Edicion limitada</p>
             <p className="mt-1">Series pequenas y seleccionadas.</p>
           </div>
         </div>
