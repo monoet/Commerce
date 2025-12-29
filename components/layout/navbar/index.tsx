@@ -13,7 +13,7 @@ export async function Navbar() {
   const menu = await getMenu('next-js-frontend-header-menu');
 
   return (
-    <nav className="sticky top-0 z-50 bg-[rgb(var(--header-green))] text-[rgb(var(--header-text))]">
+    <nav className="sticky top-0 z-50 bg-[rgb(var(--primary))] text-[rgb(var(--bg))]">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
         <div className="block flex-none md:hidden">
           <Suspense fallback={null}>
@@ -39,7 +39,7 @@ export async function Navbar() {
                   <Link
                     href={item.path}
                     prefetch={true}
-                    className="text-sm text-[rgb(var(--header-text))] transition-colors hover:text-white"
+                    className="text-sm text-[rgb(var(--bg))] transition-colors hover:text-white"
                   >
                     {item.title}
                   </Link>

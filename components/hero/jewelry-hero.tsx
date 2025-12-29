@@ -84,7 +84,7 @@ export default function JewelryHero() {
       />
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-16 pt-16 sm:px-6 md:pt-24">
         <div className="max-w-3xl">
-          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#9C6B2F]">
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[rgb(var(--accent))]">
             Atelier de perlas
           </p>
           <h1 className="hero-title mt-5 text-4xl text-[rgb(var(--fg))] md:text-6xl">
@@ -99,13 +99,13 @@ export default function JewelryHero() {
           <div className="mt-6 flex flex-wrap gap-4">
             <Link
               href="/search"
-              className="rounded-full border border-[rgb(var(--header-green))] bg-[rgb(var(--header-green))] px-6 py-3 text-sm font-medium text-[rgb(var(--header-text))] transition hover:bg-[rgb(36,42,39)]"
+              className="rounded-full border border-[rgb(var(--primary))] bg-[rgb(var(--primary))] px-6 py-3 text-sm font-medium text-[rgb(var(--bg))] transition hover:bg-[rgb(36,42,39)]"
             >
               Ver coleccion
             </Link>
             <Link
               href="/search"
-              className="rounded-full border border-[rgb(var(--border))] bg-transparent px-6 py-3 text-sm font-medium text-[#9C6B2F] transition hover:bg-[rgb(var(--bg))]"
+              className="rounded-full border border-[rgb(var(--border))] bg-transparent px-6 py-3 text-sm font-medium text-[rgb(var(--accent))] transition hover:bg-[rgb(var(--bg))]"
             >
               Comprar ahora
             </Link>

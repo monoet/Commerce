@@ -9,7 +9,7 @@ export default function Error({ reset }: { reset: () => void }) {
         action again.
       </p>
       <button
-        className="mx-auto mt-4 flex w-full items-center justify-center rounded-full bg-[#2F5E4E] p-4 tracking-wide text-[rgb(var(--bg))] transition hover:bg-[#264C3F]"
+        className="mx-auto mt-4 flex w-full items-center justify-center rounded-full bg-[rgb(var(--primary))] p-4 tracking-wide text-[rgb(var(--bg))] transition hover:bg-[rgb(36,42,39)]"
         onClick={() => reset()}
       >
         Try Again

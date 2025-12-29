@@ -35,13 +35,14 @@ button {
   --font-heading: "Gilda Display", ui-serif, Georgia, "Times New Roman", serif;
   --font-body: "DM Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --bg: 251 247 242;
-  --fg: 30 26 22;
+  --surface: 255 255 255;
+  --ink: 30 26 22;
   --muted: 111 101 92;
-  --card: 255 255 255;
+  --primary: 44 51 47;
+  --accent: 156 107 47;
   --border: 230 221 210;
-  --header-green: 44 51 47;
-  --header-text: 240 235 228;
-  --accent-gold: 156 107 47;
+  --fg: var(--ink);
+  --card: var(--surface);
 }
 
 html,
@@ -70,9 +71,9 @@ body {
 }
 
 .logo-mark {
-  color: #9c6b2f;
+  color: rgb(var(--accent));
 }
 
 .logo-mark:hover {
-  color: #1f1a16;
+  color: rgb(var(--ink));
 }
