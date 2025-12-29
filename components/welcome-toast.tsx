@@ -8,7 +8,7 @@ export function WelcomeToast() {
     // ignore if screen height is too small
     if (window.innerHeight < 650) return;
     if (!document.cookie.includes('welcome-toast=2')) {
-      toast('🛍️ Welcome to Next.js Commerce!', {
+      toast('Bienvenida a Joyeros Nayis', {
         id: 'welcome-toast',
         duration: Infinity,
         onDismiss: () => {
@@ -16,13 +16,9 @@ export function WelcomeToast() {
         },
         description: (
           <>
-            This is a high-performance, SSR storefront powered by Shopify, Next.js, and Vercel.{' '}
-            <a
-              href="https://vercel.com/templates/next.js/nextjs-commerce"
-              className="text-blue-600 hover:underline"
-              target="_blank"
-            >
-              Deploy your own
+            Nueva coleccion de piezas nacaradas y envio cuidado en cada pedido.{' '}
+            <a href="/search" className="text-[#8A6A3D] hover:underline">
+              Ver catalogo
             </a>
             .
           </>
@@ -33,3 +29,4 @@ export function WelcomeToast() {
 
   return null;
 }
+
