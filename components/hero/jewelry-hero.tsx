@@ -2,7 +2,63 @@ import Link from 'next/link';
 import LightPillar from './light-pillar';
 import styles from './light-pillar.module.css';
 
+const LIGHT_PILLAR_PRESETS = {
+  subtle: {
+    topColor: '#F7F1E9',
+    bottomColor: '#D6C4AE',
+    accentColor: '#E9D2C5',
+    intensity: 0.75,
+    rotationSpeed: 0.14,
+    glowAmount: 0.004,
+    pillarWidth: 2.5,
+    pillarHeight: 0.58,
+    noiseIntensity: 0.18,
+    shimmer: 0.2,
+    opacity: 1,
+    mixBlendMode: 'soft-light' as const,
+    interactive: false,
+    pillarRotation: -8,
+    className: styles.mask
+  },
+  balanced: {
+    topColor: '#F7F1E9',
+    bottomColor: '#D6C4AE',
+    accentColor: '#E9D2C5',
+    intensity: 0.95,
+    rotationSpeed: 0.14,
+    glowAmount: 0.006,
+    pillarWidth: 2.45,
+    pillarHeight: 0.6,
+    noiseIntensity: 0.16,
+    shimmer: 0.3,
+    opacity: 1,
+    mixBlendMode: 'screen' as const,
+    interactive: false,
+    pillarRotation: -8,
+    className: styles.mask
+  },
+  strong: {
+    topColor: '#FAF3EA',
+    bottomColor: '#D2B89B',
+    accentColor: '#F0D2C2',
+    intensity: 1.15,
+    rotationSpeed: 0.18,
+    glowAmount: 0.009,
+    pillarWidth: 2.35,
+    pillarHeight: 0.62,
+    noiseIntensity: 0.12,
+    shimmer: 0.45,
+    opacity: 1,
+    mixBlendMode: 'screen' as const,
+    interactive: false,
+    pillarRotation: -10,
+    className: ''
+  }
+};
+
 export default function JewelryHero() {
+  const preset = LIGHT_PILLAR_PRESETS.balanced;
+
   return (
     <section
       className="relative isolate overflow-hidden px-6 py-20 sm:px-10 lg:px-16"
@@ -12,21 +68,21 @@ export default function JewelryHero() {
       }}
     >
       <LightPillar
-        className={styles.mask}
-        topColor="#F7F1E9"
-        bottomColor="#D6C4AE"
-        accentColor="#E9D2C5"
-        intensity={0.75}
-        rotationSpeed={0.14}
-        glowAmount={0.004}
-        pillarWidth={2.5}
-        pillarHeight={0.58}
-        noiseIntensity={0.18}
-        shimmer={0.2}
-        opacity={1}
-        mixBlendMode="soft-light"
-        interactive={false}
-        pillarRotation={-8}
+        className={preset.className}
+        topColor={preset.topColor}
+        bottomColor={preset.bottomColor}
+        accentColor={preset.accentColor}
+        intensity={preset.intensity}
+        rotationSpeed={preset.rotationSpeed}
+        glowAmount={preset.glowAmount}
+        pillarWidth={preset.pillarWidth}
+        pillarHeight={preset.pillarHeight}
+        noiseIntensity={preset.noiseIntensity}
+        shimmer={preset.shimmer}
+        opacity={preset.opacity}
+        mixBlendMode={preset.mixBlendMode}
+        interactive={preset.interactive}
+        pillarRotation={preset.pillarRotation}
       />
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-8 text-neutral-800">
         <div className="max-w-2xl">
