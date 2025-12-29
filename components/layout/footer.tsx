@@ -10,15 +10,15 @@ const { COMPANY_NAME, SITE_NAME } = process.env;
 export default async function Footer() {
   const currentYear = new Date().getFullYear();
   const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '');
-  const skeleton = 'w-full h-6 animate-pulse rounded-sm bg-[#E6DDD2]';
+  const skeleton = 'w-full h-6 animate-pulse rounded-sm bg-[#2F5E4E]';
   const menu = await getMenu('next-js-frontend-footer-menu');
   const copyrightName = COMPANY_NAME || SITE_NAME || '';
 
   return (
-    <footer className="w-full border-t border-[#E6DDD2] bg-[#F6EFE6] text-sm text-[#8A6A3D]">
+    <footer className="w-full border-t border-[rgb(var(--border))] bg-[rgb(var(--bg))] text-sm text-[rgb(var(--fg))]">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0">
         <div>
-          <Link className="flex items-center gap-2 text-[#8A6A3D] md:pt-1" href="/">
+          <Link className="flex items-center gap-2 text-[rgb(var(--fg))] md:pt-1" href="/">
             <LogoSquare size="sm" />
             <span className="uppercase">{SITE_NAME}</span>
           </Link>
@@ -39,13 +39,13 @@ export default async function Footer() {
         </Suspense>
         <div className="md:ml-auto" />
       </div>
-      <div className="border-t border-[#E6DDD2] py-6 text-sm">
+      <div className="border-t border-[rgb(var(--border))] py-6 text-sm">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-1 px-4 md:flex-row md:gap-0 md:px-4 min-[1320px]:px-0">
           <p>
             &copy; {copyrightDate} {copyrightName}
             {copyrightName.length && !copyrightName.endsWith('.') ? '.' : ''} All rights reserved.
           </p>
-          <hr className="mx-4 hidden h-4 w-[1px] border-l border-[#D8CBBE] md:inline-block" />
+          <hr className="mx-4 hidden h-4 w-[1px] border-l border-[rgb(var(--border))] md:inline-block" />
           <p className="md:ml-auto" />
         </div>
       </div>

@@ -61,14 +61,14 @@ export default function FeaturedItems() {
     <section className="mx-auto w-full max-w-6xl px-4 pb-16 pt-8 sm:px-6">
       <div className="mb-8 flex items-end justify-between gap-6">
         <div>
-          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#8A6A3D]">
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[rgb(var(--fg))]">
             Favoritos del atelier
           </p>
-          <h2 className="mt-3 text-3xl font-semibold text-[#8A6A3D] sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-semibold text-[rgb(var(--fg))] sm:text-4xl">
             Piezas nuevas con brillo suave
           </h2>
         </div>
-        <span className="text-sm text-[#8A6A3D]">Edicion limitada</span>
+        <span className="text-sm text-[rgb(var(--fg))]">Edicion limitada</span>
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {ITEMS.map((item) => {
@@ -78,7 +78,7 @@ export default function FeaturedItems() {
           return (
           <div
             key={item.title}
-            className="group flex h-[360px] w-full flex-col overflow-hidden rounded-2xl bg-white shadow-md"
+            className="group flex h-[360px] w-full flex-col overflow-hidden rounded-2xl bg-[rgb(var(--bg))] shadow-md"
           >
             <div className="relative h-[200px] w-full overflow-hidden bg-[rgb(var(--bg))]">
               <Image
@@ -96,7 +96,7 @@ export default function FeaturedItems() {
                 className="object-cover opacity-0 transition duration-500 group-hover:opacity-100"
               />
               {item.tag ? (
-                <span className="absolute left-4 top-4 rounded-full bg-[#F4EDE4]/90 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-[#8A6A3D]">
+                <span className="absolute left-4 top-4 rounded-full bg-[rgb(var(--bg))]/90 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-[rgb(var(--fg))]">
                   {item.tag}
                 </span>
               ) : null}
@@ -108,7 +108,7 @@ export default function FeaturedItems() {
                 </p>
                 <p className="text-sm text-[rgb(var(--muted))]">Acabado perlado</p>
               </div>
-              <span className="text-sm font-semibold text-[#8A6A3D]">
+              <span className="text-sm font-semibold text-[rgb(var(--fg))]">
                 {item.price}
               </span>
             </div>

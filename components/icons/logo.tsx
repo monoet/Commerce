@@ -5,12 +5,15 @@ export default function LogoIcon(props: React.ComponentProps<'svg'>) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       aria-label={`${process.env.SITE_NAME} logo`}
-      viewBox="0 0 32 28"
+      viewBox="0 0 64 64"
       {...props}
-      className={clsx('h-4 w-4 fill-black dark:fill-white', props.className)}
+      className={clsx('h-4 w-4 text-current', props.className)}
     >
-      <path d="M21.5758 9.75769L16 0L0 28H11.6255L21.5758 9.75769Z" />
-      <path d="M26.2381 17.9167L20.7382 28H32L26.2381 17.9167Z" />
+      <g stroke="currentColor" strokeWidth="2" opacity="0.95">
+        <circle cx="26" cy="32" r="14" />
+        <circle cx="38" cy="32" r="14" />
+      </g>
+      <circle cx="32" cy="32" r="2.6" fill="currentColor" />
     </svg>
   );
 }

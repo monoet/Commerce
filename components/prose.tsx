@@ -4,7 +4,7 @@ const Prose = ({ html, className }: { html: string; className?: string }) => {
   return (
     <div
       className={clsx(
-        'prose mx-auto max-w-6xl text-base leading-7 text-[#8A6A3D] prose-headings:mt-8 prose-headings:font-semibold prose-headings:tracking-wide prose-headings:text-[#8A6A3D] prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg prose-a:text-[#8A6A3D] prose-a:underline prose-a:hover:text-neutral-300 prose-strong:text-[#8A6A3D] prose-ol:mt-8 prose-ol:list-decimal prose-ol:pl-6 prose-ul:mt-8 prose-ul:list-disc prose-ul:pl-6 dark:text-white dark:prose-headings:text-white dark:prose-a:text-white dark:prose-strong:text-white',
+        'prose mx-auto max-w-6xl text-base leading-7 text-[rgb(var(--fg))] prose-headings:mt-8 prose-headings:font-semibold prose-headings:tracking-wide prose-headings:text-[rgb(var(--fg))] prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg prose-a:text-[rgb(var(--fg))] prose-a:underline prose-a:hover:text-[rgb(var(--muted))] prose-strong:text-[rgb(var(--fg))] prose-ol:mt-8 prose-ol:list-decimal prose-ol:pl-6 prose-ul:mt-8 prose-ul:list-disc prose-ul:pl-6',
         className
       )}
       dangerouslySetInnerHTML={{ __html: html }}

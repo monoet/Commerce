@@ -17,7 +17,7 @@ export function WelcomeToast() {
         description: (
           <>
             Nueva coleccion de piezas nacaradas y envio cuidado en cada pedido.{' '}
-            <a href="/search" className="text-[#8A6A3D] hover:underline">
+            <a href="/search" className="text-[rgb(var(--fg))] hover:underline">
               Ver catalogo
             </a>
             .

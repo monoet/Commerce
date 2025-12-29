@@ -84,10 +84,10 @@ export default function JewelryHero() {
       />
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-16 pt-16 sm:px-6 md:pt-24">
         <div className="max-w-3xl">
-          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#8A6A3D]">
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[rgb(var(--fg))]">
             Atelier de perlas
           </p>
-          <h1 className="mt-5 text-4xl font-semibold leading-[0.95] text-[#2F2A25] md:text-6xl">
+          <h1 className="mt-5 text-4xl font-semibold leading-[0.95] text-[rgb(var(--fg))] md:text-6xl">
             Joyeria minimal con
             <br />
             brillo nacarado.
@@ -99,29 +99,29 @@ export default function JewelryHero() {
           <div className="mt-6 flex flex-wrap gap-4">
             <Link
               href="/search"
-              className="rounded-full border border-[#D8CBBE] bg-[#E9DDCE] px-6 py-3 text-sm font-medium text-[#6F655C] transition hover:bg-[#F4EDE4]"
+              className="rounded-full border border-[rgb(var(--border))] bg-[#2F5E4E] px-6 py-3 text-sm font-medium text-[rgb(var(--fg))] transition hover:bg-[#264C3F]"
             >
               Ver coleccion
             </Link>
             <Link
               href="/search"
-              className="rounded-full border border-[#D8CBBE] bg-white/35 px-6 py-3 text-sm font-medium text-[#8A6A3D] transition hover:bg-white/55"
+              className="rounded-full border border-[rgb(var(--border))] bg-[#2F5E4E]/15 px-6 py-3 text-sm font-medium text-[rgb(var(--fg))] transition hover:bg-[#2F5E4E]/25"
             >
               Comprar ahora
             </Link>
           </div>
         </div>
-        <div className="grid max-w-3xl gap-6 text-sm text-[#6F655C] sm:grid-cols-3">
+        <div className="grid max-w-3xl gap-6 text-sm text-[rgb(var(--muted))] sm:grid-cols-3">
           <div>
-            <p className="text-[#8A6A3D]">Bano premium</p>
+            <p className="text-[rgb(var(--fg))]">Bano premium</p>
             <p className="mt-1">Acabado perlado y resistencia diaria.</p>
           </div>
           <div>
-            <p className="text-[#8A6A3D]">Envio cuidado</p>
+            <p className="text-[rgb(var(--fg))]">Envio cuidado</p>
             <p className="mt-1">Empaque delicado y protegido.</p>
           </div>
           <div>
-            <p className="text-[#8A6A3D]">Edicion limitada</p>
+            <p className="text-[rgb(var(--fg))]">Edicion limitada</p>
             <p className="mt-1">Series pequenas y seleccionadas.</p>
           </div>
         </div>

@@ -74,7 +74,7 @@ export default function CartModal() {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white/80 p-6 text-[#8A6A3D] backdrop-blur-xl md:w-[390px] dark:border-neutral-700 dark:bg-black/80 dark:text-white">
+            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-[#2F5E4E] bg-[#2F5E4E]/90 p-6 text-[rgb(var(--fg))] backdrop-blur-xl md:w-[390px]">
               <div className="flex items-center justify-between">
                 <p className="text-lg font-semibold">My Cart</p>
                 <button aria-label="Close cart" onClick={closeCart}>
@@ -119,7 +119,7 @@ export default function CartModal() {
                         return (
                           <li
                             key={i}
-                            className="flex w-full flex-col border-b border-neutral-300 dark:border-neutral-700"
+                            className="flex w-full flex-col border-b border-[#2F5E4E] dark:border-[#2F5E4E]"
                           >
                             <div className="relative flex w-full flex-row justify-between px-1 py-4">
                               <div className="absolute z-40 -ml-1 -mt-2">
@@ -129,7 +129,7 @@ export default function CartModal() {
                                 />
                               </div>
                               <div className="flex flex-row">
-                                <div className="relative h-16 w-16 overflow-hidden rounded-md border border-neutral-300 bg-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800">
+                                <div className="relative h-16 w-16 overflow-hidden rounded-md border border-[#2F5E4E] bg-[#2F5E4E] dark:border-[#2F5E4E] dark:bg-[#2F5E4E] dark:hover:bg-[#2F5E4E]">
                                   <Image
                                     className="h-full w-full object-cover"
                                     width={64}
@@ -170,7 +170,7 @@ export default function CartModal() {
                                     item.cost.totalAmount.currencyCode
                                   }
                                 />
-                                <div className="ml-auto flex h-9 flex-row items-center rounded-full border border-neutral-200 dark:border-neutral-700">
+                                <div className="ml-auto flex h-9 flex-row items-center rounded-full border border-[#2F5E4E] dark:border-[#2F5E4E]">
                                   <EditItemQuantityButton
                                     item={item}
                                     type="minus"
@@ -194,22 +194,22 @@ export default function CartModal() {
                       })}
                   </ul>
                   <div className="py-4 text-sm text-neutral-500 dark:text-neutral-400">
-                    <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 dark:border-neutral-700">
+                    <div className="mb-3 flex items-center justify-between border-b border-[#2F5E4E] pb-1 dark:border-[#2F5E4E]">
                       <p>Taxes</p>
                       <Price
-                        className="text-right text-base text-[#8A6A3D] dark:text-white"
+                        className="text-right text-base text-[rgb(var(--fg))]"
                         amount={cart.cost.totalTaxAmount.amount}
                         currencyCode={cart.cost.totalTaxAmount.currencyCode}
                       />
                     </div>
-                    <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
+                    <div className="mb-3 flex items-center justify-between border-b border-[#2F5E4E] pb-1 pt-1 dark:border-[#2F5E4E]">
                       <p>Shipping</p>
                       <p className="text-right">Calculated at checkout</p>
                     </div>
-                    <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
+                    <div className="mb-3 flex items-center justify-between border-b border-[#2F5E4E] pb-1 pt-1 dark:border-[#2F5E4E]">
                       <p>Total</p>
                       <Price
-                        className="text-right text-base text-[#8A6A3D] dark:text-white"
+                        className="text-right text-base text-[rgb(var(--fg))]"
                         amount={cart.cost.totalAmount.amount}
                         currencyCode={cart.cost.totalAmount.currencyCode}
                       />
@@ -230,7 +230,7 @@ export default function CartModal() {
 
 function CloseCart({ className }: { className?: string }) {
   return (
-    <div className="relative flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-[#8A6A3D] transition-colors dark:border-neutral-700 dark:text-white">
+    <div className="relative flex h-11 w-11 items-center justify-center rounded-md border border-[#2F5E4E] text-[rgb(var(--fg))] transition-colors">
       <XMarkIcon
         className={clsx(
           'h-6 transition-all ease-in-out hover:scale-110',
@@ -250,7 +250,7 @@ function CheckoutButton() {
       type="submit"
       disabled={pending}
     >
-      {pending ? <LoadingDots className="bg-white" /> : 'Proceed to Checkout'}
+      {pending ? <LoadingDots className="bg-[#2F5E4E]" /> : 'Proceed to Checkout'}
     </button>
   );
 }
