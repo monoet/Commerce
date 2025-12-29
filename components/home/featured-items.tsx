@@ -58,7 +58,7 @@ const ITEMS = [
 
 export default function FeaturedItems() {
   return (
-    <section className="mx-auto w-full max-w-7xl px-6 pb-16 pt-8 sm:px-10 lg:px-16">
+    <section className="mx-auto w-full max-w-6xl px-4 pb-16 pt-8 sm:px-6">
       <div className="mb-8 flex items-end justify-between gap-6">
         <div>
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#8A6A3D]">
@@ -70,7 +70,7 @@ export default function FeaturedItems() {
         </div>
         <span className="text-sm text-[#8A6A3D]">Edicion limitada</span>
       </div>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {ITEMS.map((item) => {
           const primaryImage = item.images?.[0] ?? FALLBACK_IMAGE;
           const secondaryImage = item.images?.[1] ?? FALLBACK_IMAGE;
@@ -78,21 +78,21 @@ export default function FeaturedItems() {
           return (
           <div
             key={item.title}
-            className="group overflow-hidden rounded-2xl border border-[#E6DDD2] bg-white/40"
+            className="group flex h-[360px] w-full flex-col overflow-hidden rounded-2xl bg-white shadow-md"
           >
-            <div className="relative w-full overflow-hidden bg-[#FBF7F2] aspect-square sm:aspect-[3/4]">
+            <div className="relative h-[200px] w-full overflow-hidden bg-[rgb(var(--bg))]">
               <Image
                 src={primaryImage}
                 alt={item.title}
                 fill
-                sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 90vw"
+                sizes="(min-width: 1024px) 260px, (min-width: 640px) 45vw, 90vw"
                 className="object-cover transition duration-500 group-hover:scale-[1.03] group-hover:opacity-0"
               />
               <Image
                 src={secondaryImage}
                 alt={`${item.title} detalle`}
                 fill
-                sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 90vw"
+                sizes="(min-width: 1024px) 260px, (min-width: 640px) 45vw, 90vw"
                 className="object-cover opacity-0 transition duration-500 group-hover:opacity-100"
               />
               {item.tag ? (
@@ -101,12 +101,12 @@ export default function FeaturedItems() {
                 </span>
               ) : null}
             </div>
-            <div className="flex items-center justify-between px-4 py-3">
+            <div className="flex flex-1 flex-col justify-between gap-2 p-4">
               <div>
-                <p className="text-sm font-medium text-[#2C2621] group-hover:underline">
+                <p className="text-base font-semibold text-[rgb(var(--fg))]">
                   {item.title}
                 </p>
-                <p className="mt-1 text-xs text-[#6F655C]">Acabado perlado</p>
+                <p className="text-sm text-[rgb(var(--muted))]">Acabado perlado</p>
               </div>
               <span className="text-sm font-semibold text-[#8A6A3D]">
                 {item.price}

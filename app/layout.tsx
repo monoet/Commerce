@@ -1,7 +1,7 @@
 import { CartProvider } from 'components/cart/cart-context';
 import { Navbar } from 'components/layout/navbar';
 import { WelcomeToast } from 'components/welcome-toast';
-import { GeistSans } from 'geist/font/sans';
+import { Cormorant_Garamond, Manrope } from 'next/font/google';
 import { getCart } from 'lib/shopify';
 import { ReactNode } from 'react';
 import { Toaster } from 'sonner';
@@ -9,6 +9,20 @@ import './globals.css';
 import { baseUrl } from 'lib/utils';
 
 const { SITE_NAME } = process.env;
+
+const headingFont = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-heading',
+  display: 'swap'
+});
+
+const bodyFont = Manrope({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-body',
+  display: 'swap'
+});
 
 export const metadata = {
   metadataBase: new URL(baseUrl),
@@ -31,8 +45,8 @@ export default async function RootLayout({
   const cart = getCart();
 
   return (
-    <html lang="en" className={`${GeistSans.variable} bg-[#FBF7F2]`}>
-      <body className="min-h-screen bg-[#FBF7F2] text-[#8A6A3D] selection:bg-[#E9D2C5]">
+    <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
+      <body className="min-h-screen font-sans antialiased">
         <CartProvider cartPromise={cart}>
           <div className="min-h-screen flex flex-col">
             <Navbar />

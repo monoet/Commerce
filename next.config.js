@@ -1,4 +1,8 @@
-const config = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  compiler: {
+    reactRemoveProperties: true
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
@@ -16,4 +20,4 @@ const config = {
   }
 };
 
-export default config;
+module.exports = nextConfig;

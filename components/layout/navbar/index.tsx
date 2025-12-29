@@ -13,21 +13,22 @@ export async function Navbar() {
   const menu = await getMenu('next-js-frontend-header-menu');
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between border-b border-[#E6DDD2]/70 bg-[#FBF7F2]/55 p-4 backdrop-blur-xl supports-[backdrop-filter]:bg-[#FBF7F2]/45 lg:px-6">
-      <div className="block flex-none md:hidden">
-        <Suspense fallback={null}>
-          <MobileMenu menu={menu} />
-        </Suspense>
-      </div>
-      <div className="relative flex w-full items-center before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(120%_80%_at_50%_0%,rgba(255,255,255,0.55),transparent_60%)]">
-        <div className="flex w-full md:w-1/3">
+    <nav className="sticky top-0 z-50 border-b border-[rgb(var(--border))] bg-[rgb(var(--bg))/0.85] backdrop-blur">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
+        <div className="block flex-none md:hidden">
+          <Suspense fallback={null}>
+            <MobileMenu menu={menu} />
+          </Suspense>
+        </div>
+        <div className="flex w-full items-center">
+          <div className="flex w-full md:w-1/3">
           <Link
             href="/"
             prefetch={true}
             className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
           >
             <LogoSquare />
-            <div className="ml-2 flex-none text-sm font-medium uppercase text-[#8A6A3D] md:hidden lg:block">
+            <div className="ml-2 flex-none text-sm font-medium uppercase text-[rgb(var(--fg))] md:hidden lg:block">
               {SITE_NAME}
             </div>
           </Link>
@@ -38,7 +39,7 @@ export async function Navbar() {
                   <Link
                     href={item.path}
                     prefetch={true}
-                    className="text-[#6F655C] underline-offset-4 hover:text-[#8A6A3D] hover:underline"
+                    className="text-sm text-[rgb(var(--muted))] transition-colors hover:text-[rgb(var(--fg))]"
                   >
                     {item.title}
                   </Link>
@@ -46,14 +47,15 @@ export async function Navbar() {
               ))}
             </ul>
           ) : null}
-        </div>
-        <div className="hidden justify-center md:flex md:w-1/3">
-          <Suspense fallback={<SearchSkeleton />}>
-            <Search />
-          </Suspense>
-        </div>
-        <div className="flex justify-end md:w-1/3">
-          <CartModal />
+          </div>
+          <div className="hidden justify-center md:flex md:w-1/3">
+            <Suspense fallback={<SearchSkeleton />}>
+              <Search />
+            </Suspense>
+          </div>
+          <div className="flex justify-end md:w-1/3">
+            <CartModal />
+          </div>
         </div>
       </div>
     </nav>

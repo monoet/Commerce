@@ -60,8 +60,11 @@ export default function JewelryHero() {
   const preset = LIGHT_PILLAR_PRESETS.balanced;
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#FAF5EE]">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_60%_at_55%_30%,rgba(255,255,255,0.55)_0%,rgba(255,255,255,0.00)_60%),radial-gradient(60%_70%_at_18%_40%,rgba(30,26,22,0.08)_0%,rgba(30,26,22,0.00)_62%)]" />
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[rgb(var(--bg))]" />
+        <div className="absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[rgb(var(--border))]/60 blur-3xl" />
+      </div>
       <LightPillar
         className={preset.className}
         topColor={preset.topColor}
@@ -79,21 +82,21 @@ export default function JewelryHero() {
         interactive={preset.interactive}
         pillarRotation={preset.pillarRotation}
       />
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 pb-16 pt-24 sm:px-10 lg:px-16">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-16 pt-16 sm:px-6 md:pt-24">
         <div className="max-w-3xl">
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#8A6A3D]">
             Atelier de perlas
           </p>
-          <h1 className="mt-5 text-5xl font-semibold leading-[1.02] text-[#2C2621] sm:text-6xl">
+          <h1 className="mt-5 text-4xl font-semibold leading-[0.95] text-[#2F2A25] md:text-6xl">
             Joyeria minimal con
             <br />
             brillo nacarado.
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-[#8A6A3D]">
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-[rgb(var(--muted))] md:text-lg">
             Piezas esenciales, luz suave y un acabado calido que se siente
             editorial. Disenado para acompanarte todos los dias.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-6 flex flex-wrap gap-4">
             <Link
               href="/search"
               className="rounded-full border border-[#D8CBBE] bg-[#E9DDCE] px-6 py-3 text-sm font-medium text-[#6F655C] transition hover:bg-[#F4EDE4]"

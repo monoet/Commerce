@@ -37,17 +37,7 @@ export default async function Footer() {
         >
           <FooterMenu menu={menu} />
         </Suspense>
-        <div className="md:ml-auto">
-          <a
-            className="flex h-8 w-max flex-none items-center justify-center rounded-md border border-[#D8CBBE] bg-[#FBF7F2] text-xs text-[#8A6A3D] hover:bg-[#F4EDE4]"
-            aria-label="Deploy on Vercel"
-            href="https://vercel.com/templates/next.js/nextjs-commerce"
-          >
-            <span className="px-3">▲</span>
-            <hr className="h-full border-r border-[#D8CBBE]" />
-            <span className="px-3">Deploy</span>
-          </a>
-        </div>
+        <div className="md:ml-auto" />
       </div>
       <div className="border-t border-[#E6DDD2] py-6 text-sm">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-1 px-4 md:flex-row md:gap-0 md:px-4 min-[1320px]:px-0">
@@ -56,16 +46,7 @@ export default async function Footer() {
             {copyrightName.length && !copyrightName.endsWith('.') ? '.' : ''} All rights reserved.
           </p>
           <hr className="mx-4 hidden h-4 w-[1px] border-l border-[#D8CBBE] md:inline-block" />
-          <p>
-            <a className="text-[#8A6A3D] hover:text-[#6F522B]" href="https://github.com/vercel/commerce">
-              View the source
-            </a>
-          </p>
-          <p className="md:ml-auto">
-            <a href="https://vercel.com" className="text-[#8A6A3D] hover:text-[#6F522B]">
-              Created by ▲ Vercel
-            </a>
-          </p>
+          <p className="md:ml-auto" />
         </div>
       </div>
     </footer>
